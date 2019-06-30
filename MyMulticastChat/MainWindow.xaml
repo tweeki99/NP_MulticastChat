@@ -1,0 +1,34 @@
+﻿<Window x:Class="MyMulticastChat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyMulticastChat"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Closing="WindowClosing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="93"/>
+            <RowDefinition Height="271*"/>
+            <RowDefinition Height="55"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="107"/>
+            <ColumnDefinition Width="299*"/>
+            <ColumnDefinition Width="110"/>
+            <ColumnDefinition Width="277*"/>
+        </Grid.ColumnDefinitions>
+        <Label Name="label1" Content="Введите имя" VerticalAlignment="Center" FontSize="15" Margin="5,32,5,31" Height="30" Grid.Column="0" Grid.Row="0"/>
+        <TextBox PreviewTextInput="NumberValidationTextBox" Background="LightGray" Name="userNameTextBox"  FontSize="15" Margin="5,32,5,31" TextWrapping="Wrap" Grid.Column="1" Grid.Row="0"/>
+        <StackPanel Orientation="Vertical" Grid.Column="2" Grid.Row="0">
+            <Button Name="signinButton" Content="Вход" FontSize="17" HorizontalAlignment="Left" Margin="5,10,5,5" VerticalAlignment="Center" Width="100" Height="30" Click="SigninButtonClick"/>
+            <Button IsEnabled="False" Name="signoutButton" Content="Выход" FontSize="17" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Center" Width="100" Height="30" Click="SignoutButtonClick"/>
+        </StackPanel>
+        <TextBox BorderBrush="Black" BorderThickness="1" IsReadOnly="True" IsEnabled="False" Name="allMessageTextBox" Margin="5" TextWrapping="Wrap"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
+        <TextBox  Background="LightGray" IsEnabled="False"  Name="messageTextBox" Margin="5" TextWrapping="Wrap" FontSize="20" VerticalContentAlignment="Center" Grid.Row="2" Grid.ColumnSpan="3"/>
+        <Button IsEnabled="False" Name="sendButton" Content="Отправить"  Margin="5,8,0,7" FontSize="18"  Width="122" Height="Auto" Click="SendButtonClick" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="3"/>
+        <Label Content="Пользователи онлайн" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5,0,0"  Grid.Column="3" Height="30" Width="161"/>
+        <ListBox BorderBrush="Black" BorderThickness="1" Name="onlineUsersListBox" Margin="5,40,5,5" Grid.Column="3" Grid.RowSpan="2"/>
+
+    </Grid>
+</Window>
